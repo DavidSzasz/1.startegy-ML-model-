@@ -32,7 +32,7 @@ execute trades based on ML analyses, and store all data derived from the analyse
    - **0.** ML model makes analysis from market data -> send it to the execution program
    - **1.** execution program stores:
       - trade parameters for execution - RAM
-      - signal history, features for audit & retraining - sql db
+      - all data sent by the ML(signal history, features, ect) for audit & retraining - sql db
       - (If the ML model requires it, the executing program sends feedback.)
    - **2.** execution model:
       ## Signal Listener & State Manager (Checks capital and account resources, e.g., max open trades, and updates position state)
