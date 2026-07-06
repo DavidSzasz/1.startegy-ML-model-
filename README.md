@@ -23,6 +23,10 @@
    - **Security & environment management**
       - DotNetEnv
 
+## Database Schema Rules
+- **Migrations:** Always create migrations in the backend instead of managing them directly inside the RDBMS.
+- **New Columns:** Must always allow `NULL` or have a small, primitive `DEFAULT` value.
+- **Avoid `NOT NULL` on Existing Tables:** Never add a `NOT NULL` constraint without a default value, as it will break migrations for existing data.
 
 # goal
 execute trades based on ML analyses, and store all data derived from the analyses and trades
