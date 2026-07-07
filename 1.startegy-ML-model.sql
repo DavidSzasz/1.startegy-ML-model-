@@ -23,7 +23,7 @@ CREATE TABLE "ML_Model" (
   "updated_at" timestamp
 );
 
-CREATE TABLE "ml_model_experiments" (
+CREATE TABLE "ml_model_versions" (
   "id" int PRIMARY KEY,
   "model_version" varchar(100),
   "dataset_version" varchar(100),
@@ -42,7 +42,7 @@ CREATE TABLE "features" (
   "id" int PRIMARY KEY,
   "features_name" varchar(100),
   "feature_description" text,
-  "ml_model_experiments_id" int,
+  "ml_model_versions_id" int,
   "created_at" timestamp,
   "is_deleted" bool,
   "deleted_at" timestampe,
@@ -51,7 +51,7 @@ CREATE TABLE "features" (
 
 CREATE TABLE "hyperparameter" (
   "id" int PRIMARY KEY,
-  "ml_model_experiments_id" int,
+  "ml_model_versions_id" int,
   "hyperparameter_set_name" varchar(100),
   "n_estimators" int,
   "max_depth" int,
@@ -72,7 +72,7 @@ CREATE TABLE "hyperparameter" (
 CREATE TABLE "validation_metrics" (
   "id" int PRIMARY KEY,
   "validation_metrics_name" varchar(100),
-  "ml_model_experiments_id" int,
+  "ml_model_versions_id" int,
   "created_at" timestamp,
   "is_deleted" bool,
   "deleted_at" timestampe,
@@ -82,7 +82,7 @@ CREATE TABLE "validation_metrics" (
 CREATE TABLE "trading_metrics" (
   "id" int PRIMARY KEY,
   "trading_metrics_description" text,
-  "ml_model_experiments_id" int,
+  "ml_model_versions_id" int,
   "created_at" timestamp,
   "is_deleted" bool,
   "deleted_at" timestampe,
@@ -105,17 +105,17 @@ COMMENT ON COLUMN "ML_Model"."target" IS 'A célváltozó, amit a modell jósol 
 
 COMMENT ON COLUMN "ML_Model"."environment_state" IS 'A modell aktuális életciklus-állapota (pl. Production, Testing)';
 
-COMMENT ON COLUMN "ml_model_experiments"."model_version" IS 'Modell verziószáma (pl. v2.4.1)';
+COMMENT ON COLUMN "ml_model_versions"."model_version" IS 'Modell verziószáma (pl. v2.4.1)';
 
-COMMENT ON COLUMN "ml_model_experiments"."dataset_version" IS 'A tanításhoz használt adatverzió';
+COMMENT ON COLUMN "ml_model_versions"."dataset_version" IS 'A tanításhoz használt adatverzió';
 
-COMMENT ON COLUMN "ml_model_experiments"."hyperparameter" IS 'A modell fix beállítási paraméterei (JSON formátum)';
+COMMENT ON COLUMN "ml_model_versions"."hyperparameter" IS 'A modell fix beállítási paraméterei (JSON formátum)';
 
-COMMENT ON COLUMN "ml_model_experiments"."validation_metric" IS 'Matematikai statisztikai mutatók (JSON vagy szöveg)';
+COMMENT ON COLUMN "ml_model_versions"."validation_metric" IS 'Matematikai statisztikai mutatók (JSON vagy szöveg)';
 
-COMMENT ON COLUMN "ml_model_experiments"."trading_metrics" IS 'Üzleti/kereskedési eredmények (JSON vagy szöveg)';
+COMMENT ON COLUMN "ml_model_versions"."trading_metrics" IS 'Üzleti/kereskedési eredmények (JSON vagy szöveg)';
 
-COMMENT ON COLUMN "ml_model_experiments"."inference_latency_ms" IS 'A modell válaszideje/gyorsasága ezredmásodpercben';
+COMMENT ON COLUMN "ml_model_versions"."inference_latency_ms" IS 'A modell válaszideje/gyorsasága ezredmásodpercben';
 
 COMMENT ON COLUMN "hyperparameter"."n_estimators" IS 'A döntési fák száma a modellben';
 
