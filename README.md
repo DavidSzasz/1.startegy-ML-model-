@@ -1,4 +1,6 @@
-# 1. strategy-ML-model-
+# Algorithmic-trading-infrastructure
+# Project Goal:
+Execute Orders, store data for ml models and personal analysis strategies for the stock market.
 
 # Tools:
    - **Backend**
