@@ -311,4 +311,4 @@ ALTER TABLE "ml_model_version" ADD FOREIGN KEY ("optimization_variant_id") REFER
 
 ALTER TABLE "optimization_variant" ADD FOREIGN KEY ("ml_model_id") REFERENCES "ml_model" ("id") DEFERRABLE INITIALLY IMMEDIATE;
 
-      ------ Manual analysis strategy ------
+      ------ Personal analysis strategy ------
