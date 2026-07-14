@@ -305,9 +305,9 @@ COMMENT ON COLUMN "ml_signal"."position_size" IS 'The size suggested by the ML (
 
 COMMENT ON COLUMN "ml_signal"."signal_time" IS 'The moment the signal was generated';
 
-ALTER TABLE "ml_dataset_version_timeseries" ADD FOREIGN KEY ("ml_dataset_version_id") REFERENCES "ml_dataset_version" ("id") DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE "ml_dataset_version_timeseries_data" ADD FOREIGN KEY ("ml_dataset_version_id") REFERENCES "ml_dataset_version" ("id") DEFERRABLE INITIALLY IMMEDIATE;
 
-ALTER TABLE "ml_dataset_version_timeseries" ADD FOREIGN KEY ("timeseries_data_id") REFERENCES "timeseries_data" ("id") DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE "ml_dataset_version_timeseries_data" ADD FOREIGN KEY ("timeseries_data_id") REFERENCES "timeseries_data" ("id") DEFERRABLE INITIALLY IMMEDIATE;
 
 ALTER TABLE "ml_timeseries_feature_value" ADD FOREIGN KEY ("timeseries_data_id") REFERENCES "timeseries_data" ("id") DEFERRABLE INITIALLY IMMEDIATE;
 
