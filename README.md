@@ -1,4 +1,5 @@
-# 1. strategy-ML-model-
+# Algorithmic-trading-infrastructure
+This project is has an execution program based on ML analyses or personal analysis strategies, and store all data derived from the analyses and trades in a relational databse
 
 # Tools:
    - **Backend**
@@ -7,7 +8,7 @@
       - EF Core
       - Serilog
 
-   - **Adatbázis (DB)**
+   - **Database (DB)**
       - dbdiagram.io
       - PostgreSQL
       - pgAdmin4
@@ -27,9 +28,6 @@
 - **Migrations:** Always create migrations in the backend instead of managing them directly inside the RDBMS.
 - **New Columns:** Must always allow `NULL` or have a small, primitive `DEFAULT` value.
 - **Avoid `NOT NULL` on Existing Tables:** Never add a `NOT NULL` constraint without a default value, as it will break migrations for existing data.
-
-# goal
-execute trades based on ML analyses, and store all data derived from the analyses and trades
 
 # pipeline
    ## Execution process - (main)
