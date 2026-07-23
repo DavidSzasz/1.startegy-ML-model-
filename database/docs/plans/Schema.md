@@ -17,6 +17,10 @@
 
 ## Improtant
 
+### outsider data + outsider analysis(`tradingView`) or insider data + outsider analysis(`python project`)
+* outsider data + outsider analysis in database = in `pers_optimization_run` the `dataset_version_id` is null
+* insider data + outsider analysis in database = in `pers_optimization_run` the `dataset_version_id` is an FK
+
 ### Backtest
 * Trades are created from optimization variants witch are running on the dataset versions, they are stored as `optimization trades`. 
 
