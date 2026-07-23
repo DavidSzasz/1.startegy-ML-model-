@@ -21,6 +21,9 @@
 * outsider data + outsider analysis in database = in `pers_optimization_run` the `dataset_version_id` is null
 * insider data + outsider analysis in database = in `pers_optimization_run` the `dataset_version_id` is an FK
 
+### pers_optimization_run
+* This store the optimizations run timeline, because the `outsider data + outsider analysis` has no dataset version
+
 ### Backtest
 * Trades are created from optimization variants witch are running on the dataset versions, they are stored as `optimization trades`. 
 
